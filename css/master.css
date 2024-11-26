@@ -114,7 +114,7 @@ main {
         min-height: 30dvh;
         width: 400px;
         background-color: #0009;
-        h3 {
+                h3 {
             font-size: 1.6rem;
             border-bottom: 2px dotted #fff6;
         }
@@ -129,6 +129,12 @@ main {
             color: #6aae11;
             font-size: 1rem;
             padding: 10px 10px 20px 10px;
+            text-align: center;
+            align-items: center;
+            display: contents;
+            font-display: center;
+            align-self: flex-end;
+            
         }
     }
     menu.menu {
