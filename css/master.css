@@ -56,7 +56,6 @@ nav.nav {
             transition: all 0.4s 0.2s ease-in;
         }
         &:hover {
-            border: 20px; solid #fffc;
             background-color: #fffc;
             svg {
                 transform: scale(1.2);
