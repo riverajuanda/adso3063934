@@ -124,10 +124,8 @@ main {
         p.example {
             color: #6aae11;
             margin-top: 0.4rem;
-           
-            font-size: 1.6rem;
-            display: flex;
-                        
+            font-size: 0.5rem;
+            display: flex;          
         }
         xmp {
             background-color: #0009;
