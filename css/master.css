@@ -285,4 +285,98 @@ body.html {
 }
 
 
-    
+ /* Estilo general */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Contenedor de íconos */
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 20px; /* Separación entre íconos */
+}
+
+.icons a {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* Capas animadas */
+.icons a .layer {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    transition: transform 0.3s;
+}
+
+.icons a:hover .layer {
+    transform: rotate(-35deg) skew(20deg);
+}
+
+.icons a .layer span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+/* Ícono principal */
+.icons a .layer span.fab {
+    font-size: 30px;
+    line-height: 55px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Animación de capas adicionales */
+.icons a:hover .layer span:nth-child(1) {
+    opacity: 0.2;
+}
+
+.icons a:hover .layer span:nth-child(2) {
+    opacity: 0.4;
+    transform: translate(5px, -5px);
+}
+
+.icons a:hover .layer span:nth-child(3) {
+    opacity: 0.6;
+    transform: translate(10px, -10px);
+}
+
+.icons a:hover .layer span:nth-child(4) {
+    opacity: 0.8;
+    transform: translate(15px, -15px);
+}
+
+/* Colores personalizados */
+.icons a:nth-child(1) .layer span.fab {
+    color: #0616f7; /* Facebook Blue */
+}
+.icons a:nth-child(2) .layer span.fab {
+    color: #1da1f2; /* Twitter Blue */
+}
+.icons a:nth-child(3) .layer span.fab {
+    color: #e4405f; /* Instagram Pink */
+}
+.icons a:nth-child(4) .layer span.fab {
+    color: #ff0000; /* YouTube Red */
+}
+.icons a:nth-child(5) .layer span.fab {
+    color: #0026ff; /* YouTube Red */
+}   
+.icons a:nth-child(6) .layer span.fab {
+    color: #00ff00; /* YouTube Red */
+}
