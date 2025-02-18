@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04-script</title>
+    <link rel="shortcut icon" href="../images/icon-html-32.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/master.css">
+</head>
+<body class="html">
+    <nav class="nav">
+        <a href="index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M320 33.8L320 160 48.5 160C100.2 82.8 188.1 32 288 32c10.8 0 21.5 .6 32 1.8zM352 160l0-120.9C424.9 55.7 487.2 99.8 527.5 160L352 160zM29.9 192L96 192l0 128L0 320c0-46 10.8-89.4 29.9-128zM192 320l-64 0 0-128 320 0 0 128-64 0 0 32 192 0 0 80c0 26.5-21.5 48-48 48l-176 0 0-128c0-35.3-28.7-64-64-64s-64 28.7-64 64l0 128L48 480c-26.5 0-48-21.5-48-48l0-80 192 0 0-32zm288 0l0-128 66.1 0c19.2 38.6 29.9 82 29.9 128l-96 0z"/></svg>
+        </a>
+    </nav>
+    <main>
+        <header class="header">
+            <h1>04-script</h1>
+            <h2>Inserts JavaScript code.  
+                Inserta código en JavaScript</h2>
+        </header>
+        <section class="section">
+            <h3>Example:</h3>
+            <p class="example">Insert Javascript code</p>
+            <h3>Result:</h3>
+<xmp>
+    function comprobarNumero() {
+        const numero = document.getElementById('numero').value; // Obtiene el valor ingresado
+        const resultado = document.getElementById('resultad
+    }
+    function comprobarNumero() {
+        const numero = document.getElementById('numero').value; // Obtiene el valor ingresado
+        const resultado = document.getElementById('resultado'); // Elemento para mostrar el resultado
+    }
+   
+        if (numero > 0) {
+            resultado.textContent = "El número es positivo.";
+        } else if (numero < 0) {
+            resultado.textContent = "El número es negativo.";
+        } else if (numero == 0) {
+            resultado.textContent = "El número es cero.";
+        } else {
+            resultado.textContent = "P
+
+        }
+</xmp>
+        </section>
+    </main>
+</body>
+</html>
