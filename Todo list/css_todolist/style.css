@@ -6,6 +6,7 @@ body{
     font-family: sans-serif;
     justify-content: center;
     min-height: 100dvh;
+    
 }
 
 nav.nav {
@@ -39,6 +40,7 @@ main{
     border-radius: 0.4rem;
     padding: 1rem;
     width: 380px;
+    border: 20px black;
     
     header{
        
@@ -144,5 +146,29 @@ main{
     }
 }
 
+    
+    #reset {
+        background-color: red;
+        border: 1px solid black;
+        color: rgb(253, 252, 252);
+        border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
+        width: auto;
+        height: 40px;
+        border: 1px solid red;
+        font-size: 1.4rem;
+        align-items: center;
+        display: flex;
+        margin-top: 10px;
+        margin-left: 150px;
+        justify-content: center;
+        padding: center;
+        cursor: pointer;      
+        outline: none;
+        transition: transform 0.4s ease-in;          
+        &:hover{
+            transform: scale(1.05);
+        }    
+    }
+    
 }
 
