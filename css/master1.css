@@ -1,0 +1,300 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0a0a0a;
+    scrollbar-width: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding-top: 60px
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    .icons a {
+        width: 35px;
+        height: 35px;
+    }
+
+    .cube {
+        width: 60px;
+        height: 60px;
+    }
+
+    .sidebar {
+        width: 130px;
+        left: -130px;
+    }
+}
+
+/* 🖥️ Pantallas grandes */
+@media (min-width: 1024px) {
+    .scene {
+        margin-top: 100px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+h1 {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 30%; /* Centra el h1 entre la barra y el cubo */
+    left: 50%;
+    transform: translateX(-50%);
+}
+p {
+    font-size: 24px;
+    color: white;
+    text-align: justify;
+    position: absolute;
+    top: 40%; /* Centra el h1 entre la barra y el cubo */
+    left: 50%;
+    transform: translateX(-50%);
+}
+.scene {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 60%; /* Ajusta el cubo más abajo */
+    left: 50%;
+    transform: translateX(-50%);
+    perspective: 800px;
+}
+
+.cube {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    animation: rotate 5s infinite linear;
+}
+
+.cube div {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 255, 255, 0.3);
+    border: 2px solid cyan;
+    box-shadow: 0 0 20px cyan;
+    transition: 0.3s;
+}
+
+/* Caras del cubo */
+.front  { transform: translateZ(50px); }
+.back   { transform: rotateY(180deg) translateZ(50px); }
+.left   { transform: rotateY(-90deg) translateZ(50px); }
+.right  { transform: rotateY(90deg) translateZ(50px); }
+.top    { transform: rotateX(90deg) translateZ(50px); }
+.bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+@keyframes rotate {
+    0%   { transform: rotateX(0) rotateY(0); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: rgba(10, 10, 10, 0.9); /* Fondo semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que quede por encima de otros elementos */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque */
+}
+
+.nav-image {
+    position: fixed;
+    align-items: center;
+    top: 20px; /* Justo debajo de la barra de navegación */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; /* Ajusta el tamaño según sea necesario */
+    opacity: 0.1; /* Controla la transparencia */
+    z-index: -1; /* La coloca detrás de otros elementos */
+    pointer-events: none; /* Evita que interfiera con la navegación */
+}
+/* Contenedor de íconos */
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 20px; /* Separación entre íconos */
+    
+}
+
+.icons a {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    
+}
+
+/* Capas animadas */
+.icons a .layer {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    transition: transform 0.3s;
+    
+}
+
+.icons a:hover .layer {
+    transform: rotate(-35deg) skew(20deg);
+    
+}
+
+.icons a .layer span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 40%;
+    width: 30%;    
+    border-radius: 5px;
+    transition: all 0.3s;
+    
+}
+
+/* Ícono principal */
+.icons a .layer span.fab {
+    font-size: 30px;
+    line-height: 55px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Animación de capas adicionales */
+.icons a:hover .layer span:nth-child(1) {
+    opacity: 0.2;
+    box-shadow: 0px 30px 10px 0px cyan;
+    padding: center;
+}
+
+.icons a:hover .layer span:nth-child(2) {
+    opacity: 0;
+    transform: translate(15px, -15px);
+}
+
+.icons a:hover .layer span:nth-child(3) {
+    opacity: 0.6;
+    transform: translate(15px, -15px);
+}
+
+.icons a:hover .layer span:nth-child(4) {
+    opacity: 0.8;
+    transform: translate(15px, -15px);
+}
+.icons a:hover .layer span:nth-child(5) {
+    opacity: 0.8;
+    transform: translate(15px, -15px);
+}
+
+/* Colores personalizados */
+.icons a:nth-child(1) .layer span.fab {
+    color: #3b5998; /* Facebook Blue */
+}
+.icons a:nth-child(2) .layer span.fab {
+    color: #1da1f2; /* Twitter Blue */
+}
+.icons a:nth-child(3) .layer span.fab {
+    color: #e4405f; /* Instagram Pink */
+}
+.icons a:nth-child(4) .layer span.fab {
+    color: #ff0000; /* YouTube Red */
+}
+.icons a:nth-child(5) .layer span.fab {
+    color: #2a27e2; /* Linkedin blue */
+}
+
+/* Barra lateral con efecto de vidrio esmerilado */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px; /* Oculto inicialmente */
+    width: 280px;
+    height: 100vh;
+    background: rgba(20, 20, 20, 0.8); /* Negro translúcido */
+    backdrop-filter: blur(10px); /* Efecto de vidrio */
+    border-right: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+    transition: left 0.4s ease-in-out;
+    padding-top: 50px;
+    z-index: 1000;
+}
+
+/* Cuando se abre, la barra aparece */
+.sidebar.open {
+    left: 10px;
+}
+
+/* Estilo de los enlaces */
+.sidebar a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan; /* Sombra de cian */
+    color: cyan; /* Cambia el color del texto también */
+    transform: scale(1.1); /* Efecto de leve aumento */
+    transform-origin: left; /* Centra la animación en el eje X */
+}
+
+
+/* Efecto de reflejo al pasar el mouse */
+.sidebar a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.4s ease-in-out
+
+}
+
+#menu-toggle {
+    position: fixed;
+    top: 35px;
+    left: 10px; /* Lo mueve a la izquierda */
+    background: rgba(0, 255, 255, 0.3); /* Color en sintonía con el cubo */
+    border: 2px solid cyan;
+    box-shadow: 0 0 10px cyan;
+    color: white;
+    font-size: 20px;
+    padding: center;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    height: 35px;
+    width: 35px;
+}
+
+#menu-toggle:hover {
+    background: cyan;
+    color: black;
+}
