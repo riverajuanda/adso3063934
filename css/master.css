@@ -1,35 +1,47 @@
-
 /* - - - - - - - - - - - - - */
 /* F O N T S */
 /* - - - - - - - - - - - - - */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 /* - - - - - - - - - - - - - */
 /* R E S E T */
 /* - - - - - - - - - - - - - */
 html {
     box-sizing: border-box;
     font-size: 16px;
-  }
-  
-  *, *:before, *:after {
+}
+
+*,
+*:before,
+*:after {
     box-sizing: inherit;
-  }
-  
-  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
     margin: 0;
     padding: 0;
     font-weight: normal;
-  }
-  
-  ol, ul {
+}
+
+ol,
+ul {
     list-style: none;
-  }
-  
-  img {
+}
+
+img {
     max-width: 100%;
     height: auto;
-    }
-    
+}
+
 /* - - - - - - - - - - - - - */
 /* G E N E R A L */
 /* - - - - - - - - - - - - - */
@@ -42,6 +54,7 @@ nav.nav {
     position: fixed;
     top: 20px;
     left: 20px;
+
     a:is(:link, :visited) {
         border-radius: 50%;
         border-color: white;
@@ -52,12 +65,15 @@ nav.nav {
         justify-content: center;
         transition: all 0.4s ease-in;
         width: 40px;
+
         svg {
             width: 20px;
             transition: all 0.4s 0.2s ease-in;
         }
+
         &:hover {
             background-color: #fffc;
+
             svg {
                 transform: scale(1.2);
             }
@@ -77,24 +93,28 @@ main {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+
         h1 {
             font-size: 3.6rem;
             container-name: 150px;
             font-weight: 500;
             color: white;
         }
+
         h2 {
             font-size: 1.6rem;
             font-weight: 200;
             color: white;
         }
+
         figure {
             border-radius: 50%;
             border: 6px solid rgba(43, 30, 30, 0.6);
             box-shadow: #091a7a;
-            
+
             height: 200px;
             width: 200px;
+
             img {
                 border-radius: 100px;
                 height: 188px;
@@ -103,13 +123,14 @@ main {
                 background-color: rgb(5, 5, 5);
             }
         }
-        
+
         h3 {
             font-size: 1.6rem;
             font-weight: 300;
             color: white;
         }
     }
+
     section.section {
         margin-top: 1rem;
         border-radius: 6px;
@@ -117,16 +138,24 @@ main {
         min-height: 30dvh;
         width: 400px;
         background-color: #0009;
-                h3 {
-            font-size: 0.5rem;
+
+        h3 {
+            font-size: 1.4rem;
             border-bottom: 2px dotted #fff6;
         }
+
+        p {
+            text-align: justify;
+            font-size: 1rem;
+        }
+
         p.example {
             color: #6aae11;
             margin-top: 0.4rem;
             font-size: 0.5rem;
-            display: flex;          
+            display: flex;
         }
+
         xmp {
             background-color: #0009;
             border-radius: 6px;
@@ -143,14 +172,16 @@ main {
             justify-items: auto;
             display: contents;
 
-            
+
         }
     }
+
     menu.menu {
         display: flex;
         flex-direction: column;
         justify-content: center;
         gap: 0.6rem;
+
         a:is(:link, :visited) {
             background-color: #fff9;
             border-radius: 25px;
@@ -161,21 +192,23 @@ main {
             text-decoration: none;
             width: 220px;
             transition: all 0.2s ease-in;
+
             span {
-               background-color: #091a7a; 
-               border: 2px solid #fff9;
-               border-radius: 50%;
-               color: #fff9;
-               display: flex;
-               justify-content: center;
-               align-items: center;
-               height: 40px;
-               transition: all 0.4s ease-in;
-               width: 40px;
+                background-color: #091a7a;
+                border: 2px solid #fff9;
+                border-radius: 50%;
+                color: #fff9;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 40px;
+                transition: all 0.4s ease-in;
+                width: 40px;
             }
+
             &:hover span {
-               border-radius: 50px;
-               width: 60px;
+                border-radius: 50px;
+                width: 60px;
             }
         }
     }
@@ -190,22 +223,24 @@ body.main-menu {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: top left;
-    }
+}
 
-body.emmet {  
+body.emmet {
     background-color: #084e0e;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='184' height='184' viewBox='0 0 200 200'%3E%3Cg %3E%3Cpolygon fill='%23479700' points='100 57.1 64 93.1 71.5 100.6 100 72.1'/%3E%3Cpolygon fill='%236ab70f' points='100 57.1 100 72.1 128.6 100.6 136.1 93.1'/%3E%3Cpolygon fill='%23479700' points='100 163.2 100 178.2 170.7 107.5 170.8 92.4'/%3E%3Cpolygon fill='%236ab70f' points='100 163.2 29.2 92.5 29.2 107.5 100 178.2'/%3E%3Cpath fill='%238CD83B' d='M100 21.8L29.2 92.5l70.7 70.7l70.7-70.7L100 21.8z M100 127.9L64.6 92.5L100 57.1l35.4 35.4L100 127.9z'/%3E%3Cpolygon fill='%232e6a00' points='0 157.1 0 172.1 28.6 200.6 36.1 193.1'/%3E%3Cpolygon fill='%23457f00' points='70.7 200 70.8 192.4 63.2 200'/%3E%3Cpolygon fill='%235C951C' points='27.8 200 63.2 200 70.7 192.5 0 121.8 0 157.2 35.3 192.5'/%3E%3Cpolygon fill='%23457f00' points='200 157.1 164 193.1 171.5 200.6 200 172.1'/%3E%3Cpolygon fill='%232e6a00' points='136.7 200 129.2 192.5 129.2 200'/%3E%3Cpolygon fill='%235C951C' points='172.1 200 164.6 192.5 200 157.1 200 157.2 200 121.8 200 121.8 129.2 192.5 136.7 200'/%3E%3Cpolygon fill='%232e6a00' points='129.2 0 129.2 7.5 200 78.2 200 63.2 136.7 0'/%3E%3Cpolygon fill='%235C951C' points='200 27.8 200 27.9 172.1 0 136.7 0 200 63.2 200 63.2'/%3E%3Cpolygon fill='%23457f00' points='63.2 0 0 63.2 0 78.2 70.7 7.5 70.7 0'/%3E%3Cpolygon fill='%235C951C' points='0 63.2 63.2 0 27.8 0 0 27.8'/%3E%3C/g%3E%3C/svg%3E");
     background-attachment: fixed;
     background-size: cover;
-    
+
     menu {
         a:is(:link, :visited) {
             color: #213d02;
+
             span {
                 background-color: #417208;
             }
         }
     }
+
     nav.nav {
         a {
             svg {
@@ -214,26 +249,31 @@ body.emmet {
         }
     }
 }
-body.html {  
+
+body.html {
     background-color: #ff7700;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23e44c24' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23f48150' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23e65d35' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23f37a48' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23e86c45' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%23f17240' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23ea7b55' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23ef6a38' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23eb8966' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23ee6230' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23eb9677' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23ec5928' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
     background-attachment: fixed;
-    background-size: cover;
-    
+    image-resolution: from-image;
+    background-size: fixed;
+    backdrop-filter: blur(1px);
+
     menu {
         a:is(:link, :visited) {
-            background-color: #e44c24;
+            background-color: #e44a248c;
             background-attachment: fixed;
             background-size: cover;
-            color: #eca494;
-            border: 1px solid #eca494;
+            color: rgb(255, 255, 255);
+            border: 2px solid #f10707;
             background-attachment: fixed;
+
             span {
-                background-color:  #e44c24 ;
+                background-color: #ff7700;
             }
         }
     }
-    nav.nav {        
+
+    nav.nav {
         a {
             svg {
                 fill: #f10707;
@@ -247,8 +287,8 @@ body {
     margin: 10px 15px 10px 15px;
     background-color: #a11111;
     border-radius: 15%;
-    padding: 10px;   
-         
+    padding: 10px;
+
 }
 
 /* Contenedor de íconos */
@@ -259,12 +299,12 @@ body {
     margin: 10px;
     border: solid 1px;
     box-shadow: #091a7a;
-    border-color: black; 
+    border-color: black;
     background-color: gray;
     border-radius: 15px;
-    padding: 1px 2px 1px 2px;   
-    gap: 10px; 
-    
+    padding: 1px 2px 1px 2px;
+    gap: 10px;
+
 }
 
 .icons a {
@@ -278,8 +318,8 @@ body {
     margin-left: 15%;
     border-radius: 30px;
     margin: 1px;
-   
-    
+
+
 }
 
 /* Capas animadas */
@@ -288,7 +328,7 @@ body {
     width: 55px;
     height: 55px;
     transition: transform 0.3s;
-    
+
 }
 
 .icons a:hover .layer {
@@ -310,13 +350,13 @@ body {
     text-align: center;
     color: #1d1b1b;
     border-radius: 15px;
-    
+
 }
 
 /* Animación de capas adicionales */
 .icons a:hover .layer span:nth-child(1) {
     opacity: 0.2;
-    
+
 }
 
 .icons a:hover .layer span:nth-child(2) {
@@ -336,29 +376,40 @@ body {
 
 /* Colores personalizados */
 .icons a:nth-child(1) .layer span.fab {
-    color: #0a48cc; /* Facebook Blue */
+    color: #0a48cc;
+    /* Facebook Blue */
 }
+
 .icons a:nth-child(2) .layer span.fab {
-    color: #1da1f2; /* Twitter Blue */
+    color: #1da1f2;
+    /* Twitter Blue */
 }
+
 .icons a:nth-child(3) .layer span.fab {
-    color: #e4405f; /* Instagram Pink */
+    color: #e4405f;
+    /* Instagram Pink */
 }
+
 .icons a:nth-child(4) .layer span.fab {
-    color: #ff0000; /* YouTube Red */
+    color: #ff0000;
+    /* YouTube Red */
 }
+
 .icons a:nth-child(5) .layer span.fab {
-        color: #1518c7; /* LinkedIn Blue */
+    color: #1518c7;
+    /* LinkedIn Blue */
 }
+
 .icons a:nth-child(6) .layer span.fab {
-    color: #2df113; /* Whatsapp Green */
+    color: #2df113;
+    /* Whatsapp Green */
 }
 
 
-.aboutme{
+.aboutme {
     font-size: 18px;
     line-height: 1.5;
-    color: #ffffff;    
+    color: #ffffff;
     display: flex;
     text-align: justify;
     align-items: center;
@@ -368,5 +419,3 @@ body {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23222' stroke-width='10' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
     background-size: cover;
 }
-
-
