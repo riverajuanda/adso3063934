@@ -181,10 +181,13 @@ main {
         flex-direction: column;
         justify-content: center;
         gap: 0.6rem;
+        border-radius: 10px solid    blue;
+        
 
         a:is(:link, :visited) {
             background-color: #fff9;
             border-radius: 25px;
+            border-radius: 10px solid rgba(10, 82, 218, 0.6);
             color: #100357;
             display: flex;
             align-items: center;
@@ -195,7 +198,7 @@ main {
 
             span {
                 background-color: #091a7a;
-                border: 2px solid #fff9;
+                border: 2px solid rgba(255, 255, 255, 0.6);
                 border-radius: 50%;
                 color: #fff9;
                 display: flex;
@@ -204,11 +207,13 @@ main {
                 height: 40px;
                 transition: all 0.4s ease-in;
                 width: 40px;
+                border-radius: 1px solid    blue;
             }
 
             &:hover span {
                 border-radius: 50px;
                 width: 60px;
+                
             }
         }
     }
@@ -223,6 +228,7 @@ body.main-menu {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: top left;
+    border-radius: 1px solid    blue;
 }
 
 body.emmet {
