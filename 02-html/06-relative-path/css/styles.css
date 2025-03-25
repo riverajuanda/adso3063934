@@ -71,4 +71,34 @@ main {
        }
    } 
 }
- 
+
+nav.nav {
+    position: fixed;
+    top: 30px;
+    left: 50px;
+
+    a:is(:link, :visited) {
+        border-radius: 50%;
+        border-color: white;
+        background-color: rgba(245, 240, 240, 0.4);
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease-in;
+        width: 40px;
+
+        svg {
+            width: 20px;
+            transition: all 0.4s 0.2s ease-in;
+        }
+
+        &:hover {
+            background-color: #fffc;
+
+            svg {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
