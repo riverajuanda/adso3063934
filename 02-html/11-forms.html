@@ -122,7 +122,7 @@
                 <div class="block">
                     <div class="input">
                         <h4>Text:</h4>
-                        <input type="text" placeholder="Ingresar texto" >
+                        <input type="text" placeholder="Ingresar texto">
                     </div>
                     <div class="input">
                         <h4>Password:</h4>
@@ -145,58 +145,62 @@
                     </div>
                     <div class="input">
                         <h4>Date:</h4>
-                        <input type="date">
+                        <input type="date" value="2023-10-01" min="2023-01-01" max="2023-12-31" step="1"
+                            oninput="ddate.value=this.value">
                     </div>
                     <div class="input">
                         <h4>Time:</h4>
-                        <input type="time">
+                        <input type="time" value="12:00" min="00:00" max="23:59" step="1"
+                            oninput="ttime.value=this.value">
                     </div>
                     <div class="input">
                         <h4>Week:</h4>
-                        <input type="week">
+                        <input type="week" value="2023-W40" min="2023-W01" max="2023-W52" step="1"
+                            oninput="wweek.value=this.value">
                     </div>
                     <div class="input">
                         <h4>Month:</h4>
-                        <input type="month">
+                        <input type="month" value="2023-10" min="2023-01" max="2023-12" step="1"
+                            oninput="mmonth.value=this.value">
                     </div>
                     <div class="input">
                         <h4>Email:</h4>
-                        <input type="email">
+                        <input type="email" required placeholder="Ingrese su Email">
                     </div>
                     <div class="input">
                         <h4>Search:</h4>
-                        <input type="search">
+                        <input type="search" placeholder="Search...">
                     </div>
                     <div class="input">
                         <h4>File:</h4>
-                        <input type="file">
+                        <input type="file" accept="image/*" multiple oninput="ffile.value=this.value">
                     </div>
                     <div class="input">
                         <h4>Button:</h4>
-                        <input type="button" value="Button">
+                        <input type="button" value="Button" onclick="alert('Boton clicado!')">
                     </div>
                     <div class="input">
                         <h4>Submit:</h4>
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Submit" onclick="alert('Formulario Enviado!')">
                     </div>
                     <div class="input">
                         <h4>Reset:</h4>
-                        <input type="reset" value="Reset">
+                        <input type="reset" value="Reset" onclick="alert('Formulario Reiniciado!')">
                     </div>
                     <div class="input">
                         <h4>Radio:</h4>
                         <input type="radio" name="option" checked>
-                        <input type="radio" name="option">
+                        <input type="radio" name="option" value="option2">
                     </div>
                     <div class="input">
                         <h4>CheckBox:</h4>
                         <input type="checkbox" name="option1" checked>
-                        <input type="checkbox" name="option2">
+                        <input type="checkbox" name="option2" value="option2">
                     </div>
                     <h3>Others Elements</h3>
                     <div class="input">
                         <h4>Progress:</h4>
-                        <progress value="0.5"></progress>
+                        <progress value="0.5">hola</progress>
                     </div>
                     <div class="input">
                         <h4>Select:</h4>
@@ -204,6 +208,7 @@
                             <option value="" selected>Select Gender...</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
+                            <option value="Other">Other</option>
                         </select>
                     </div>
                     <div class="input">
@@ -221,26 +226,31 @@
                     <form action="" method="post">
                         <label for="">
                             Fullname:
-                            <input type="text" name="fullname" required>
+                            <input type="text" name="fullname" required placeholder="Jeremias Springfield" maxlength="50"> 
                         </label>
                         <label for="">
                             Email:
-                            <input type="email" name="email" required>
+                            <input type="email" name="email" required placeholder="Enter your email" maxlength="50">
                         </label>
                         <label for="">
                             BirthDate:
-                            <input type="date" name="birthdate" required>
+                            <input type="date" name="birthdate" required min="1980-01-01" max="2030-12-31" step="1"
+                                oninput="ddate.value=this.value">
                         </label>
                         <label for="">
                             Gender:
-                            <select name="gender" required>
+                            <select name="gender" required oninput="ddate.value=this.value">
                                 <option value="Female">Female</option>
                                 <option value="Male">Male</option>
                             </select>
                         </label>
                         <label>
-                            <input type="submit" value="Send Data">
-                            <input type="reset" value="Reset Data">
+                            <input type="submit" value="Send Data" onclick="alert('Formulario Enviado!')">
+                        </label>
+                            <input type="reset" value="Reset Data" onclick="alert('Formulario Reiniciado!')">
+                        <label for="">
+                            <input type="checkbox" name="terms" required checked>                            
+                            I accept the terms and conditions
                         </label>
                     </form>
                 </fieldset>
@@ -250,6 +260,8 @@
     <script>
         const passw = document.getElementById('passw')
         const toggleOpt = document.getElementById('toggle-option')
+        const per = document.getElementById('per')
+        
 
         toggleOpt.addEventListener('click', () => {
             if (toggleOpt.textContent == 'show') {
