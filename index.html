@@ -9,50 +9,111 @@
     <link rel="shortcut icon" href="images/profile.jpg.png" type="image/x-icon">
     <link rel="stylesheet" href="css/master.css">
 </head>
-<body class="main-menu">    
+
+<body class="main-menu">
+    <style>
+        body .main-menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .layered-animations {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 16rem;
+            height: 16rem;
+            transform: scale(1.0);
+        }
+
+        .layered-animations .shape {
+            position: absolute;
+            overflow: visible;
+            width: 10rem;
+            height: 10rem;
+            stroke: currentColor;
+            stroke-width: 2px;
+            fill: transparent;
+        }
+
+        .layered-animations .small.shape {
+            width: 1.5rem;
+            height: 1.5rem;
+            stroke: currentColor;
+            stroke-width: 2px;
+            fill: currentColor;
+        }
+    </style>
     <main>
         <header class="header">
             <div class="icons">
                 <a href="https://www.facebook.com/riverajuanda" target="_blank">
                     <div class="layer">
                         <span class="fab fa-facebook-f"></span>
-                        </div>
+                    </div>
                 </a>
                 <a href="https://www.twitter.com" target="_blank">
                     <div class="layer">
                         <span class="fab fa-twitter"></span>
-                        </div>
+                    </div>
                 </a>
                 <a href="https://www.instagram.com/riverajuanda" target="_blank">
                     <div class="layer">
                         <span class="fab fa-instagram"></span>
-                        </div>
+                    </div>
                 </a>
                 <a href="https://www.youtube.com/@riverajuanda" target="_blank">
                     <div class="layer">
                         <span class="fab fa-youtube"></span>
-                        </div>
+                    </div>
                 </a>
                 <a href="https://www.linkedin.com/in/juan-david-rivera-campos-5a630b97/" target="_blank">
                     <div class="layer">
                         <span class="fab fa-linkedin"></span>
-                        </div>
+                    </div>
                 </a>
                 <a href="https://wa.me/+573113648867" target="_blank">
                     <div class="layer">
                         <span class="fab fa-whatsapp"></span>
-                        </div>
+                    </div>
                 </a>
             </div>
-            <h1>ADSO 3063934</h1>            
-            <h2>Software Analysis & Development</h2>           
+            <h1>ADSO 3063934</h1>
+            <h2>Software Analysis & Development</h2>
             <figure>
                 <span>
-                <a href="aboutme/aboutme.html"><img src="images/profile.jpg.png" alt="profile"></a>
-            </span>
+                    <a href="aboutme/aboutme.html"><img src="images/profile.jpg.png" alt="profile"></a>
+                </span>
             </figure>
-            <h3>Juan David Rivera</h3>            
+            <h3><strong>Juan David Rivera</strong></h3>
+            <br>
         </header>
+
+        <div class="layered-animations">
+            <svg class="small shape color-red" viewBox="0 0 96 96">
+                <rect width="400" height="400" x="24" y="24" fill-rule="evenodd" stroke-linecap="square" />
+            </svg>
+            <svg class="small shape color-red" viewBox="0 0 96 96">
+                <polygon fill-rule="evenodd" points="48 17.28 86.4 80.11584 9.6 80.11584" stroke-linecap="square" />
+            </svg>
+            <svg class="small shape color-red" viewBox="0 0 96 96">
+                <circle cx="48" cy="48" r="32" fill-rule="evenodd" stroke-linecap="square" />
+            </svg>
+            <svg class="shape" viewBox="0 0 96 96">
+                <circle cx="48" cy="48" r="28" fill-rule="evenodd" stroke-linecap="square" />
+            </svg>
+            <svg class="shape" viewBox="0 0 96 96">
+                <rect width="48" height="48" x="24" y="24" fill-rule="evenodd" stroke-linecap="square" />
+            </svg>
+            <svg class="shape" viewBox="0 0 96 96">
+                <polygon fill-rule="evenodd" points="48 17.28 86.4 80.11584 9.6 80.11584" stroke-linecap="square" />
+            </svg>
+        </div>
+        <br>
         <menu class="menu">
             <a href="01-emmet/index.html">
                 <span>01</span>
@@ -71,7 +132,9 @@
                 J Query
             </a>
         </menu>
+
     </main>
+    <script type="module" src="./index.js"></script>
 </body>
 
 </html>
