@@ -152,17 +152,18 @@ header h1, header h2, header h3 {
     </header>
     <menu class="menu">
       
-      <a href="../aboutme/profile.html">
-        <span onclick="openModal()" class="icons">
-          
+      <a href="../aboutme/profile.html" >
+        <span class="button"  onclick="openModal()" >          
           <img class="icons" src="../images/info.png.png" alt="profile" />
-        </span>
-        <button >
-          Ver CV Completo
-      </button>
-  
-        About
+        </span>        
+          Ver CV Completo      
       </a>
+      
+      <div class="modal-overlay" id="cvModal" style="display: none;">
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+
+
       <a href="../aboutme/profile.html">
         <span><img class="icons" src="../images/educacion.png" alt="profile" /></span>
         Education
@@ -175,14 +176,7 @@ header h1, header h2, header h3 {
       </a>
     </menu>
   </main>
-  <div class="cube">
-    <div class="front"></div>
-    <div class="back"></div>
-    <div class="left"></div>
-    <div class="right"></div>
-    <div class="top"></div>
-    <div class="bottom"></div>
-  </div>
+  
   <script type="module">
     import { animate, createTimeline, createTimer, stagger, utils } from './anime.esm.js';
 
@@ -292,6 +286,157 @@ header h1, header h2, header h3 {
 
 
   </script>
+   <!-- Modal -->
+   <div class="modal-overlay" id="cvModal" style="display: none;">
+    <div class="modal-container">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        
+        <!-- Contenido del CV -->
+        <header class="header">
+            <div class="profile-header">
+                <img src="https://via.placeholder.com/120" alt="Juan David Rivera Campos" class="profile-image">
+                <div class="profile-info">
+                    <h1>Juan David Rivera Campos</h1>
+                    <p class="title">Full Stack Developer & Food Systems Engineer</p>
+                    <div class="contact-bar">
+                        <a href="mailto:juan.rivera@example.com" class="contact-item">
+                            <i class="fas fa-envelope"></i> juan.rivera@example.com
+                        </a>
+                        <a href="tel:+573001234567" class="contact-item">
+                            <i class="fas fa-phone"></i> +57 300 123 4567
+                        </a>
+                        <a href="https://linkedin.com/in/juan-david-rivera-campos" target="_blank" class="contact-item">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="primary-content">
+                <section class="section">
+                    <h2 class="section-title">Professional Summary</h2>
+                    <p class="profile-text">
+                        Multidisciplinary engineer with 8+ years of experience in food production systems and 
+                        full-stack development. Expert in process optimization, quality management systems 
+                        (ISO 22000, HACCP), and digital transformation of industrial processes. 
+                        Proven track record in leading cross-functional teams and implementing 
+                        tech-driven solutions that improve efficiency by 30-40%.
+                    </p>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Experience</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">Production Manager</h3>
+                                <span class="timeline-date">2020 - Present</span>
+                            </div>
+                            <p class="timeline-subtitle">Alimentos S.A., Medellín</p>
+                            <ul class="timeline-list">
+                                <li>Led digital transformation initiative reducing operational costs by 25%</li>
+                                <li>Implemented predictive maintenance system increasing uptime by 18%</li>
+                                <li>Managed cross-functional teams of 150+ employees</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">Quality Systems Coordinator</h3>
+                                <span class="timeline-date">2018 - 2020</span>
+                            </div>
+                            <p class="timeline-subtitle">Nutrición Industrial Ltda., Bogotá</p>
+                            <ul class="timeline-list">
+                                <li>Developed AI-based quality prediction models (Python, TensorFlow)</li>
+                                <li>Automated reporting system reducing administrative work by 40%</li>
+                                <li>Implemented blockchain-based supply chain tracking</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="sidebar">
+                <section class="section">
+                    <h2 class="section-title">Technical Skills</h2>
+                    <div class="skills-container">
+                        <span class="skill-badge">JavaScript/ES6+</span>
+                        <span class="skill-badge">Python & Data Science</span>
+                        <span class="skill-badge">React & Next.js</span>
+                        <span class="skill-badge">Node.js & Express</span>
+                        <span class="skill-badge">PostgreSQL & MongoDB</span>
+                        <span class="skill-badge">AWS & Docker</span>
+                        <span class="skill-badge">IoT & Industry 4.0</span>
+                        <span class="skill-badge">SAP Integration</span>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Education</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">Software Development</h3>
+                                <span class="timeline-date">2024 - 2027</span>
+                            </div>
+                            <p class="timeline-subtitle">SENA</p>
+                            <p>Specialization in Cloud Architecture</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">Food Engineering</h3>
+                                <span class="timeline-date">2010 - 2018</span>
+                            </div>
+                            <p class="timeline-subtitle">Universidad de Caldas</p>
+                            <p>Focus on Industrial Automation</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Certifications</h2>
+                    <div class="certifications">
+                        <p class="skill-badge">AWS Certified Developer</p>
+                        <p class="skill-badge">Scrum Master (PSM I)</p>
+                        <p class="skill-badge">Six Sigma Black Belt</p>
+                        <p class="skill-badge">ISO 22000 Lead Auditor</p>
+                    </div>
+                </section>
+            </aside>
+        </main>
+    </div>
+</div>
+
+<script>
+    // Control del modal
+    function openModal() {
+        document.getElementById('cvModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        document.getElementById('cvModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Cerrar al hacer clic fuera
+    window.onclick = function(event) {
+        const modal = document.getElementById('cvModal');
+        if (event.target === modal) {
+            closeModal();
+        }
+    }
+
+    // Cerrar con ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    });
+</script>
 </body>
 
 </html>
