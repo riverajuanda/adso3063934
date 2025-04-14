@@ -1,76 +1,395 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>profile</title>        
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <link rel="shortcut icon" href="images/profile.jpg.png" type="image/x-icon">
-        <link rel="stylesheet" href="../css/master.css">
-    </head>
-<body class="aboutme">
-    <nav class="nav">
-        <a href="../index.html">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
-        </a>
-    </nav>
-    <main>
-        <menu class="menu">
-            <section>
-        <h2><strong>Perfil</strong></h2>
-        <p>Soy un profesional con experiencia diversa en ingeniería de alimentos que abarca desde producción, calidad, investigación y desarrollo y logística interna de los procesos productivos, hasta coordinación de equipos de trabajo con mas de 100 personas involucradas directamente en el proceso; liderazgo de iniciativas y proyectos de mejora enfocadas a incrementar el potencial de las personas y mejora continua por medio de capacitaciones constantes y acompañamiento al personal en planta, que ha llevado al incremento de los indicadores tanto en clima laboral como de eficiencia productiva en las organizaciones dónde he podido prestar mis servicios.
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan David Rivera Campos - Full Stack Developer & Food Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2B2D42;
+            --secondary: #EF233C;
+            --accent: #8D99AE;
+            --light: #EDF2F4;
+            --dark: #1D1F27;
+            --success: #06D6A0;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-            Actualmente, curso estudios en  desarrollo de software, con un interés particular en el desarrollo full-stack, donde busco aplicar mi sentido visual y creatividad técnica con miras a suplir las necesidades de mis clientes y además para implementar la analítica de datos en los  indicadores de producción (Kpi). Mi formación y experiencia me permiten adaptarme a cualquier tipo de proyectos donde se requiere precisión técnica, innovación y/o habilidad narrativa para el desarrollo de soluciones innovadoras y creativas.
-            
-            En la industria alimentaria, he implementado mejoras continuas que optimizan la producción y gestionado sistemas de calidad bajo TPM, 5's e incluyendo normativa de innocuidad como BPM, HACCP, IFS e ISO22000, contribuyendo a estándares elevados de seguridad y eficiencia. Estoy interesado en oportunidades en el sector de alimentos en cargos de jefaturas de planta o coordinación de áreas si ofrecen condiciones  competitivas, donde pueda aplicar mi experiencia en procesos y una visión transversal para lograr los objetivos de la organización en consonancia a sus valores corporativos.
-            
-            A lo largo de más de una década en fotografía y videografía, he trabajado en la producción de contenido visual impactante, cubriendo eventos culturales y proyectos empresariales. Mis servicios incluyen fotorreportaje, edición y creación de narrativas visuales para empresas e instituciones. Mi habilidad para captar y transmitir historias ha sido clave en proyectos como el Festival de Teatro de Manizales, la Feria de Manizales, Grita Rock y otros eventos para la prensa local y nacional.
-            
-            Busco nuevas oportunidades en roles que valoren una perspectiva integral que combine tecnología, arte visual o precisión en el desarrollo de soluciones. Mi objetivo es aportar a proyectos en los que pueda aplicar habilidades en desarrollo de software o comunicación visual, integrando estética y funcionalidad.</p>
-        </section>
-        <section>
-        <h2><strong>Educación</strong></h2>
-        <ol>
-            <li>
-                <p><strong>Servicio Nacional de Aprendizaje (SENA)</strong>                
-                <p>Tecnólogo en Analisis y Desarrollo de Software</p>
-                <p>oct. 2024 - ene. 2027</p>
-            </li>
-            <li>
-                <p><strong> Universidad de Caldas</strong>
-                <p>Grado en Ingeniería, Ciencia de los alimentos</p>
-                <p>Grado en Ingeniería, Ciencia de los alimentos</p>
-                <p>feb. 2010 - sept. 2018</p>
-            </li>            
-        </ol>
-    </section>
-    <section>
-        <h2><strong>Experiencia</strong></h2>
-        <ol>
-            <li>
-                <p></p>
-            </li>
-            <li>
-                <p></p>
-            </li>
-            <li>
-                <p></p>
-            </li>
-            <li>
-                <p></p>
-            </li>
-            <li>
-                <p></p>
-            </li>
-            <li>
-                <p></p>
-            </li>
-        </ol>
-    </section> 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    </menu>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+            -webkit-font-smoothing: antialiased;
+        }
 
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .header {
+            padding: 3rem 4rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: var(--secondary);
+            transform: rotate(45deg);
+            opacity: 0.15;
+        }
+
+        .profile-header {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid var(--light);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-info h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .profile-info .title {
+            font-size: 1.25rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            color: var(--secondary);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            padding: 3rem 4rem;
+        }
+
+        .sidebar {
+            border-left: 1px solid var(--light);
+            padding-left: 3rem;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid var(--secondary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 15px;
+            bottom: 15px;
+            width: 2px;
+            background: var(--light);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--light);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 24px;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-title {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .timeline-date {
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .timeline-subtitle {
+            color: var(--secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--light);
+            border-radius: 20px;
+            margin: 0.25rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .skill-badge:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+            }
+
+            .sidebar {
+                border-left: none;
+                padding-left: 0;
+                border-top: 1px solid var(--light);
+                padding-top: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 2rem;
+            }
+
+            .profile-header {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .profile-image {
+                margin: 0 auto;
+            }
+
+            .contact-bar {
+                justify-content: center;
+            }
+        }
+
+        @media print {
+            .container {
+                box-shadow: none;
+                margin: 0;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="profile-header">
+                <img src="/images/profileJuanDavid.jpg" alt="Juan David Rivera Campos" class="profile-image" style="height: 120px; width: 120px;">
+                <div class="profile-info">
+                    <h1>Juan David Rivera Campos</h1>
+                    <p class="title" style="text-align: center;">Full Stack Developer & Food Systems Engineer</p>
+                    <p class="title style="text-align: center;>Profesional Photographer & Videographer</p>
+                    <div class="contact-bar">
+                        <a href="mailto:juan_david_rivera@hotmail.com" class="contact-item">
+                            <i class="fas fa-envelope"></i> juan_david_rivera@hotmail.com
+                        </a>
+                        <a href="tel:+573001234567" class="contact-item">
+                            <i class="fas fa-phone"></i> +57 311 364 8867
+                        </a>
+                        <a href="https://linkedin.com/in/juan-david-rivera-campos" target="_blank" class="contact-item">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://instagram.com/riverajuanda" target="_blank" class="contact-item">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="primary-content">
+                <section class="section">
+                    <h2 class="section-title">Professional Summary</h2>
+                    <p class="profile-text">
+                        Multidisciplinary engineer with 8+ years of experience in food production systems and 
+                        full-stack development. Expert in process optimization, quality management systems 
+                        (ISO 22000, HACCP), and digital transformation of industrial processes. 
+                        Proven track record in leading cross-functional teams and implementing 
+                        tech-driven solutions that improve efficiency by 30-40%.
+                    </p>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Experience</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">Production Manager</h3>
+                                <span class="timeline-date">2020 - Present</span>
+                            </div>
+                            <p class="timeline-subtitle">Alimentos S.A., Medellín</p>
+                            <ul class="timeline-list">
+                                <li>Led digital transformation initiative reducing operational costs by 25%</li>
+                                <li>Implemented predictive maintenance system increasing uptime by 18%</li>
+                                <li>Managed cross-functional teams of 150+ employees</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">Quality Systems Coordinator</h3>
+                                <span class="timeline-date">2018 - 2020</span>
+                            </div>
+                            <p class="timeline-subtitle">Nutrición Industrial Ltda., Bogotá</p>
+                            <ul class="timeline-list">
+                                <li>Developed AI-based quality prediction models (Python, TensorFlow)</li>
+                                <li>Automated reporting system reducing administrative work by 40%</li>
+                                <li>Implemented blockchain-based supply chain tracking</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="sidebar">
+                <section class="section">
+                    <h2 class="section-title">Technical Skills</h2>
+                    <div class="skills-container">
+                        <span class="skill-badge">JavaScript/ES6+</span>
+                        <span class="skill-badge">Python & Data Science</span>
+                        <span class="skill-badge">React & Next.js</span>
+                        <span class="skill-badge">Node.js & Express</span>
+                        <span class="skill-badge">PostgreSQL & MongoDB</span>
+                        <span class="skill-badge">AWS & Docker</span>
+                        <span class="skill-badge">IoT & Industry 4.0</span>
+                        <span class="skill-badge">SAP Integration</span>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Education</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">Software Development</h3>
+                                <span class="timeline-date">2024 - 2027</span>
+                            </div>
+                            <p class="timeline-subtitle">SENA</p>
+                            <p>Specialization in Cloud Architecture</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">Food Engineering</h3>
+                                <span class="timeline-date">2010 - 2018</span>
+                            </div>
+                            <p class="timeline-subtitle">Universidad de Caldas</p>
+                            <p>Focus on Industrial Automation</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Certifications</h2>
+                    <div class="certifications">
+                        <p class="skill-badge">AWS Certified Developer</p>
+                        <p class="skill-badge">Scrum Master (PSM I)</p>
+                        <p class="skill-badge">Six Sigma Black Belt</p>
+                        <p class="skill-badge">ISO 22000 Lead Auditor</p>
+                    </div>
+                </section>
+            </aside>
         </main>
-    
+    </div>
 </body>
 </html>

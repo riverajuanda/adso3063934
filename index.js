@@ -61,3 +61,21 @@ for (var i = 0; i < shapeEls.length; i++) {
   animateShape(shapeEls[i]);
 }
 
+const triangleAnimation = createTimeline({
+  onComplete: () => triangleAnimation.restart(),
+})
+.add(triangleEl, {
+  points: createKeyframes(() => {
+    const s = utils.random(.9, 1.6, 3);
+    return `
+    ${points[0]*s} ${points[1]*s} ${points[2]*s} ${points[3]*s} ${points[4]*s} ${points[5]*s}
+    `;
+  }),
+}, 0)
+.add(triangleEl, {
+  rotate: createKeyframes(() => utils.random(-180, 180)),
+}, 0)
+.add(triangleEl, {
+  translateX: createKeyframes(() => utils.random(-4, 4) + 'rem'),
+  translateY: createKeyframes(() => utils.random(-4, 4) + 'rem'),
+}, 0)
