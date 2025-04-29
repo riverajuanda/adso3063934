@@ -290,6 +290,45 @@ body.html {
     }
 }
 
+
+body.css {
+    background-color: #1405df;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect fill='none' stroke-width='86.4' stroke-opacity='0.49' id='a' x='-400' y='-300' width='800' height='600'/%3E%3C/defs%3E%3Cg style='transform-origin:center'%3E%3Cg transform='rotate(14.4 0 0)' style='transform-origin:center'%3E%3Cg transform='rotate(-123.2 0 0)' style='transform-origin:center'%3E%3Cg transform='translate(1000 750)'%3E%3Cuse stroke='%23000' href='%23a' transform='rotate(7.7 0 0) scale(1.077)'/%3E%3Cuse stroke='%23000011' href='%23a' transform='rotate(15.4 0 0) scale(1.154)'/%3E%3Cuse stroke='%23000022' href='%23a' transform='rotate(23.1 0 0) scale(1.231)'/%3E%3Cuse stroke='%23000033' href='%23a' transform='rotate(30.8 0 0) scale(1.308)'/%3E%3Cuse stroke='%23000044' href='%23a' transform='rotate(38.5 0 0) scale(1.385)'/%3E%3Cuse stroke='%23000055' href='%23a' transform='rotate(46.2 0 0) scale(1.462)'/%3E%3Cuse stroke='%23000066' href='%23a' transform='rotate(53.9 0 0) scale(1.539)'/%3E%3Cuse stroke='%23000077' href='%23a' transform='rotate(61.6 0 0) scale(1.616)'/%3E%3Cuse stroke='%23000088' href='%23a' transform='rotate(69.3 0 0) scale(1.693)'/%3E%3Cuse stroke='%23000099' href='%23a' transform='rotate(77 0 0) scale(1.77)'/%3E%3Cuse stroke='%230000aa' href='%23a' transform='rotate(84.7 0 0) scale(1.847)'/%3E%3Cuse stroke='%230000bb' href='%23a' transform='rotate(92.4 0 0) scale(1.924)'/%3E%3Cuse stroke='%230000cc' href='%23a' transform='rotate(100.1 0 0) scale(2.001)'/%3E%3Cuse stroke='%230000dd' href='%23a' transform='rotate(107.8 0 0) scale(2.078)'/%3E%3Cuse stroke='%230000ee' href='%23a' transform='rotate(115.5 0 0) scale(2.155)'/%3E%3Cuse stroke='%2300F' href='%23a' transform='rotate(123.2 0 0) scale(2.232)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;  
+    image-resolution: from-image;    
+    backdrop-filter: blur(1px);
+    
+
+
+    menu {
+        a:is(:link, :visited) {
+            background-color: #276BF2;
+            background-attachment: fixed;
+            background-size: cover;
+            color: rgb(0, 0, 0);
+            border: 2px solid #F2F2F2;
+            background-attachment: fixed;
+           
+            
+
+            span {
+                background-color: #08298d;
+                background-attachment: fixed;
+                border: 2px solid #f2f2f2;
+                color: rgb(255, 254, 254);
+            }
+        }
+    }
+
+    nav.nav {
+        a {
+            svg {
+                fill: #99AFF2;
+            }
+        }
+    }
+}
 /* Estilo general */
 body {
     margin: 10px 15px 10px 15px;
