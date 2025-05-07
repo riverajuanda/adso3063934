@@ -12,15 +12,7 @@
 </head>   
 <body class="main-menu">
     <style>
-        body .main-menu {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            width: 100%;
-        }
-
+       
         .layered-animations {
             position: relative;
             display: flex;
@@ -57,15 +49,18 @@
         }
 
         footer {
-            background: linear-gradient(45deg, #2c3e50, #3498db);
+            background: transparent;
             color: #ffffff;
             padding: 60px 0 30px 0;
             margin-top: 100px;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
         }
 
         .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 100%;
+            margin: 0;
             padding: 0 20px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -76,6 +71,8 @@
             font-size: 1.5rem;
             margin-bottom: 25px;
             position: relative;
+            width: fit-content;
+            
         }
 
         .footer-section h3::after {
@@ -183,12 +180,15 @@
             </div>
             <h1>ADSO 3063934</h1>
             <h2>Software Analysis & Development</h2>
+            <br>
+            <br>
             <figure>
                 <span>
                     <a href="aboutme/aboutme.html"><img src="images/profile.jpg.png" alt="profile"></a>
                 </span>
             </figure>
-           
+           <br>
+           <br>
             <h3><strong>Juan David Rivera</strong></h3>
             <br>
         
@@ -213,6 +213,7 @@
                 <polygon fill-rule="evenodd" points="48 17.28 86.4 80.11584 9.6 80.11584" stroke-linecap="square" />
             </svg>            
         </div>
+        <br>
         <br>
         <menu class="menu">
             <a href="01-emmet/index.html">
@@ -264,17 +265,17 @@
             <div class="footer-section">
                 <h3>Redes Sociales</h3>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/riverajuanda" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/riverajuanda" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/juan-david-rivera-campos-5a630b97/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/@riverajuanda" target="_blank"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 202 Juan David Rivera. Todos los derechos reservados</p>
+            <p>&copy; 2025 Juan David Rivera. Todos los derechos reservados</p>
         </div>
     </footer>
     
