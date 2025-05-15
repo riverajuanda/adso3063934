@@ -19,11 +19,22 @@
             <p>Execute code when the DOM is fully loaded.</p>
         </header>
         <section class="section">
-            
-
-
+            <h3>1. Document Ready</h3>
+            <p>Use the <code>$(document).ready()</code> function to execute code when the DOM is fully loaded:</p>
+            <pre><code>&lt;script&gt;
+$(document).ready(function() {
+// Your code here
+alert('jQuery is installed and ready to use!');
+$('.install').html('jQuery is installed and ready to use!');
+});<|cursor|>
         </section>
-       
+<script>
+    $(document).ready(function() {
+// Your code here
+alert('jQuery is installed and ready to use!');
+$('.install').html('jQuery is installed and ready to use!');
+});
+</script>
     </main>
 </body>
 </html>
