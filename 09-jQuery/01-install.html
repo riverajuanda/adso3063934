@@ -6,6 +6,15 @@
     <title>01-install</title>
     <link rel="shortcut icon" href="../images/logo-jquery.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/master.css">
+    <style>
+        .install {
+    background-color: #2df113;
+    border-radius: 0.2rem;
+    color: #152115;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+    </style>
 </head>
 <body class="jquery">
     <nav class="nav">
@@ -20,26 +29,14 @@
         </header>
         <section class="section">
             <p class="install"></p>
-            
-            <h3>1. Download jQuery</h3>
-            <p>Download the latest version of jQuery from the official website: <a href="https://jquery.com/download/" target="_blank">jQuery Download</a></p>
-            <h3>2. Include jQuery in your HTML</h3>
-            <p>You can include jQuery in your HTML file by adding the following script tag in the head or body section:</p>
-            <pre><code>&lt;script src="path/to/jquery.min.js"&gt;&lt;/script&gt;</code></pre>
-            <p>Replace "path/to/" with the actual path to the downloaded jQuery file.</p>
-               
-            <code><script>    
-        $(document).ready(function() {
-            alert('jQuery is installed and ready to use!');
-        });
-    </script>   </code>            
+                     
         </section>
        
     </main>
     <script src="/09-jQuery/Todo list/js/jquery-3.7.1.min.js"></script>
     <script>    
         $(document).ready(function() {
-            $('.install').text('jQuery is installed and ready to use!');
+            $('.install').text('✔ jQuery is installed and ready to use! ⚠');
         });
     </script>
 </body>
