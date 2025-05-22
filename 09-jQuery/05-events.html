@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05-events</title>
+    <link rel="shortcut icon" href="../images/logo-jquery.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/master.css">
+    <style>
+        figure {
+            border-radius: 0.9rem;
+            overflow: hidden;
+            padding: 0;
+            margin: 1rem auto;
+            height: 300px;
+            width: 300px;
+            filter: grayscale(1);
+            border: 2px solid #ffffff;
+
+            img {
+                transition: all 0.5s ease;
+                transform: scale(1.6);
+            }
+        }
+
+        article.area {
+            margin: 0 auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            background: url('images/fondo.jpg') no-repeat center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+
+            img.character {
+                position: absolute;
+                top: 100px;
+                left: 120px;
+                width: 50px;
+                height: 70px;
+                transition: all 0.5s ease;
+
+            }
+        }
+
+        select.emoji {
+            width: 200px;
+            height: 35px;
+            background-color: #061dee41;
+            color: #ffffff;
+            margin-bottom: 20px;
+            border-radius: 0.5rem;
+            appearance: none;
+            display: flex;
+            margin: 0 auto;
+            padding: 0.6rem;
+            width: 120px;
+            font-size: 0.7rem;
+            text-align: center  ;
+
+            option {
+                font-size: 1rem;
+                margin-top: 20px;
+                text-align: justify;
+                background-color: #061dee41;
+                border-radius: 12px ;
+            }
+        }
+
+        output.emotion {
+            width: 200px;            
+            display: block;
+            margin: 0  auto;
+            align-items: center;
+            text-align: center;
+            color:crimson;
+            text-shadow: 2px 2px 4px #000000;                
+            font-size: 12rem;
+            
+        }
+    </style>
+</head>
+
+<body class="jquery">
+    <nav class="nav">
+        <a href="/09-jQuery/index.html">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 576 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                    d="M320 33.8L320 160 48.5 160C100.2 82.8 188.1 32 288 32c10.8 0 21.5 .6 32 1.8zM352 160l0-120.9C424.9 55.7 487.2 99.8 527.5 160L352 160zM29.9 192L96 192l0 128L0 320c0-46 10.8-89.4 29.9-128zM192 320l-64 0 0-128 320 0 0 128-64 0 0 32 192 0 0 80c0 26.5-21.5 48-48 48l-176 0 0-128c0-35.3-28.7-64-64-64s-64 28.7-64 64l0 128L48 480c-26.5 0-48-21.5-48-48l0-80 192 0 0-32zm288 0l0-128 66.1 0c19.2 38.6 29.9 82 29.9 128l-96 0z" />
+            </svg>
+        </a>
+    </nav>
+    <main>
+        <header class="header">
+            <h2>05-Events</h2>
+            <p>Handle user interactions like clicks and keypresses.
+        </header>
+        <section class="section">
+            <h4>Mouse Events:</h4>
+            <h3>MouseEnter & MouseLeave</h3>
+            <figure>
+                <img src="/09-jQuery/images/rostro.jpg" alt="Rosto">
+            </figure>
+            <h4>Key Events:</h4>
+            <h3>key up</h3>
+            <article class="area">
+                <image class="character" src="images/mariopng.png" alt="Mario"></image>
+                <small style="color:black; text-align: center; margin-left:20px;">Press arrow keys: &larr; &rarr; &darr;
+                    &uarr; </small>
+            </article>
+            <h4>Form Events:</h4>
+            <h3 style="margin-bottom: 20px;">Change</h3>
+            <select class="emoji">
+                <option value="⁉">Select an emotion</option>
+                <option value="🤣">Happy</option>
+                <option value="😪">Sad</option>
+                <option value="😡">Angry</option>
+            </select>
+            <output class="emotion">⁉</output>
+        </section>
+
+    </main>
+    <script src="/09-jQuery/Todo list/js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // mouseenter & mouseleave
+
+            $('figure').mouseenter(function () {
+                $(this).css('filter', 'grayscale(0)');
+                $(this).children('img').css('transform', 'scale(1)');
+            });
+            $('figure').mouseleave(function () {
+                $(this).css('filter', 'grayscale(1)');
+                $(this).children('img').css('transform', 'scale(1.6)');
+            });
+
+        });
+        // keyup
+        $(document).keyup(function (event) {
+            switch (event.key) {
+                case 'ArrowUp':
+                    $('.character').css('top', '-=50px');
+                    break;
+                case 'ArrowDown':
+                    $('.character').css('top', '+=50px');
+                    break;
+                case 'ArrowLeft':
+                    $('.character').css('left', '-=50px');
+                    break;
+                case 'ArrowRight':
+                    $('.character').css('left', '+=50px');
+                    break;
+            }
+        });
+
+        // change event for emoji select
+        $('.emoji').change(function () {
+            $('.emotion').text($(this).val());
+        });
+
+
+
+    </script>
+</body>
+
+</html>
