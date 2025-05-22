@@ -13,36 +13,61 @@
             display: flex;
             width: 250px;
             justify-content: space-between;
-            align-items: center;                        
-        }     
+            align-items: center;
+        }
 
-            output {
-                font-size: 6rem;
+        output {
+            font-size: 6rem;
+        }
+
+        button {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            transition: transform 0.4s ease-in;
+        }
+
+        button svg {
+            width: 50px;
+            height: 50px;
+        }
+
+        button.btn-subs {
+            color: red;
+        }
+
+        button.btn-add {
+            color: green;
+        }
+
+        button:hover {
+            transform: scale(1.2);
+        }
+
+        button.btn-reset {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            color: white;
+            cursor: pointer;
+            border: none;
+            display: flex;
+            border-radius: 0.4em;
+            margin: 0.6rem 1.2rem;
+            transition: transform 0.4s ease-in;
+
+            &:hover {
+                transform: scale(1.1);
             }
 
-            button {
-                border: none;
-                background-color: transparent;
-                cursor: pointer;
-                transition: transform 0.4s ease-in;
-
-                svg {
-                    width: 50px;
-                    height: 50px;
-                }
-
-                &.btn-subs {
-                    color: red;
-                }
-
-                &.btn-add {
-                    color: green;
-                }
-
-                &:hover {
-                    transform: scale(1.2);
-                }
+            svg {
+                width: 20%;
+                height: 20%;
+                padding: 0.6rem;
+                /* Opcional: espacio interno para respiración */
             }
+        }
     </style>
 </head>
 
@@ -77,19 +102,47 @@
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                     </svg>
-
                 </button>
             </div>
-
+            <button class="btn-reset">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-8">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 6V4m0 16v-2m8.485-8.485L20 12m-16 0l1.515-1.515M4.22 4.22l1.415 1.415M18.364 18.364l1.415 1.415M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Z" />
+                </svg>
+            </button>
         </section>
-
     </main>
     <script src="/09-jQuery/Todo list/js/jquery-3.7.1.min.js"></script>
     <script>
         $(document).ready(function () {
             // Your code here
-            $('.ready').text('✔ DOM Loaded  ⚠');
-        });
+            $count = 0
+            $("button.btn-add").click(function () {
+                $count++;
+                $("output").text($count);
+            });
+            $("button.btn-subs").click(function () {
+                $count--;
+                $("output").text($count);
+            });
+            $("button.btn-add").dblclick(function () {
+                $count += 10;
+                $("output").text($count);
+            });
+            $("button.btn-subs").dblclick(function () {
+                $count -= 10;
+                $("output").text($count);
+            });
+            $("button.btn-reset").click(function () {
+                $count = 0;
+                $("output").text($count);
+            });
+            $("button.btn-reset").dblclick(function () {
+                $count = 0;
+                $("output").text($count);
+            });
+        });   
     </script>
 </body>
 
