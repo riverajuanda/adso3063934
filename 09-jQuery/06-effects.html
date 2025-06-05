@@ -17,8 +17,7 @@
         align-items: center;
         min-height: 600px;
         gap: 2rem;
-        min-height: 80vh;
-        background: linear-gradient(135deg, #1a2a6c, #2c3e50);
+        background: linear-gradient(135deg, #1a2a6c, #293746);     
         padding: 3rem 2rem;
         border-radius: 20px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -70,8 +69,8 @@
 
       select.fx:focus {
         outline: none;
-        border-color: #2ecc71;
-        box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.3);
+        border-color: #063ac9;
+        box-shadow: 0 0 0 3px rgba(30, 18, 202, 0.3);
       }
 
       img.character {
@@ -91,7 +90,7 @@
       img.character:hover {
         transform: scale(1.05) rotateY(5deg);
         box-shadow: 0 15px 35px rgba(52, 152, 219, 0.6);
-        border-color: #2ecc71;
+        border-color: rgba(52, 152, 219, 0.6)
       }
 
       /* Animación de fondo */
@@ -114,7 +113,7 @@
       /* Diseño responsive */
       @media (max-width: 768px) {
         section.section {
-          min-height: 70vh;
+          min-height: 500px;
           padding: 2rem 1rem;
         }
 
@@ -172,11 +171,7 @@
           <option value="11">Animate</option>
           <option value="12">Stop</option>
         </select>
-        <img
-          src="/09-jQuery/images/fondo-removebg-preview.png"
-          alt=""
-          class="character"
-        />
+        <img src="/09-jQuery/images/fondo-removebg-preview.png" alt="" class="character">
       </section>
     </main>
     <script src="/09-jQuery/Todo list/js/jquery-3.7.1.min.js"></script>
@@ -227,12 +222,12 @@
               toggleDisableds();
               break;
             case "11":
-              $(".character").animate({width: '120px'}, 2500);
-              $(".character").animate({width: '368px'}, 2500, toggleDisableds);
+              $(".character").animate({ width: "120px" }, 2500);
+              $(".character").animate({ width: "368px" }, 2500,
+              );
               break;
             case "12":
               $(".character").stop();
-              toggleDisableds();
               break;
           }
         });
