@@ -7,6 +7,25 @@
     <link rel="shortcut icon" href="../images/logo-jquery.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/master.css">
     <style>
+        button.btn{
+            padding: 0.5rem 1rem;
+            border-radius: 0.4rem;
+            border: 1px solid #ccc;
+            background-color: #f5f5f5;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100px;
+            margin: 1rem auto 1rem auto;
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            color: #333;            
+        }
+        button.btn:hover{
+            background-color: #e0e0e0;
+        }
         figure.character{
             display: flex;
             flex-direction: column;
@@ -20,8 +39,7 @@
                 color: black;
                 border: 1px solid #ccc;
                 font-size: 1rem;
-                padding: 0.4rem
-              
+                padding: 0.4rem                
             }
         }
     </style>
@@ -38,23 +56,25 @@
             <p>Use callback functions to execute code after an action.</p>            
         </header>
         <section class="section">
+            <button class="btn">Animate</button>
             <figure class="character">
                 <img src="/09-jQuery/images/fondo-removebg-preview.png" alt="Fondo" width="180px">
-                <figcaption>Lorem ipsum</figcaption>
+                <figcaption>Fondo</figcaption>
             </figure>      
         </section>
        
     </main>
     <script src="/09-jQuery/Todo list/js/jquery-3.7.1.min.js"></script>
     <script>
-        $(document).ready(function () {
-            
+    $(document).ready(function () {
+        $('.btn').click(function () {
             $('figcaption').text('Animation Started');
-            $('figure').animate({left: '150px'}, 1500, function () {
-                $('figure').animate({left: '0px'}, 1500, function () {
-                $('figcaption').text('Animation Ended');
+            $('figure.character').animate({left: '150px'}, 1500, function () {
+                $('figure.character').animate({left: '0px'}, 1500, function () {
+                    $('figcaption').text('Animation Ended');
+                });
             });
-        });
+        });            
     });
       
         </script>
