@@ -1,35 +1,281 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>06-effects</title>
-    <link rel="shortcut icon" href="../images/logo-jquery.png" type="image/x-icon">
-    <link rel="stylesheet" href="../css/master.css">
-</head>
-<body class="jquery">
+    <link
+      rel="shortcut icon"
+      href="../images/logo-jquery.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../css/master.css" />
+    <style>
+      section.section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 600px;
+        gap: 2rem;
+        min-height: 80vh;
+        background: linear-gradient(135deg, #1a2a6c, #2c3e50);
+        padding: 3rem 2rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        margin: 2rem auto;
+        max-width: 1200px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      section.section::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 70%
+        );
+        z-index: 0;
+        min-height: 600px;
+      }
+
+      select.fx {
+        padding: 1rem 2rem;
+        border-radius: 12px;
+        border: 2px solid #3498db;
+        background: rgba(25, 118, 210, 0.7);
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(5px);
+        width: 280px;
+        text-align: center;
+      }
+
+      select.fx:hover {
+        background: rgba(41, 128, 185, 0.9);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+      }
+
+      select.fx:focus {
+        outline: none;
+        border-color: #2ecc71;
+        box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.3);
+      }
+
+      img.character {
+        width: 250px;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 15px;
+        border: 5px solid #3498db;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        transition: all 0.5s ease;
+        transform-style: preserve-3d;
+        position: relative;
+        z-index: 1;
+        background: linear-gradient(45deg, #1a2a6c, #2c3e50);
+      }
+
+      img.character:hover {
+        transform: scale(1.05) rotateY(5deg);
+        box-shadow: 0 15px 35px rgba(52, 152, 219, 0.6);
+        border-color: #2ecc71;
+      }
+
+      /* Animación de fondo */
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      img.character {
+        animation: float 4s ease-in-out infinite;
+      }
+
+      /* Diseño responsive */
+      @media (max-width: 768px) {
+        section.section {
+          min-height: 70vh;
+          padding: 2rem 1rem;
+        }
+
+        select.fx {
+          padding: 0.8rem 1.5rem;
+          font-size: 1rem;
+          width: 220px;
+        }
+
+        img.character {
+          width: 200px;
+          height: 280px;
+        }
+      }
+
+      /* Efecto de partículas */
+      .particle {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 50%;
+        z-index: 0;
+      }
+    </style>
+    >
+  </head>
+  <body class="jquery">
     <nav class="nav">
-        <a href="/09-jQuery/index.html">            
-           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M320 33.8L320 160 48.5 160C100.2 82.8 188.1 32 288 32c10.8 0 21.5 .6 32 1.8zM352 160l0-120.9C424.9 55.7 487.2 99.8 527.5 160L352 160zM29.9 192L96 192l0 128L0 320c0-46 10.8-89.4 29.9-128zM192 320l-64 0 0-128 320 0 0 128-64 0 0 32 192 0 0 80c0 26.5-21.5 48-48 48l-176 0 0-128c0-35.3-28.7-64-64-64s-64 28.7-64 64l0 128L48 480c-26.5 0-48-21.5-48-48l0-80 192 0 0-32zm288 0l0-128 66.1 0c19.2 38.6 29.9 82 29.9 128l-96 0z"/></svg>
-        </a>
-           </nav>
+      <a href="/09-jQuery/index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+          <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <path
+            d="M320 33.8L320 160 48.5 160C100.2 82.8 188.1 32 288 32c10.8 0 21.5 .6 32 1.8zM352 160l0-120.9C424.9 55.7 487.2 99.8 527.5 160L352 160zM29.9 192L96 192l0 128L0 320c0-46 10.8-89.4 29.9-128zM192 320l-64 0 0-128 320 0 0 128-64 0 0 32 192 0 0 80c0 26.5-21.5 48-48 48l-176 0 0-128c0-35.3-28.7-64-64-64s-64 28.7-64 64l0 128L48 480c-26.5 0-48-21.5-48-48l0-80 192 0 0-32zm288 0l0-128 66.1 0c19.2 38.6 29.9 82 29.9 128l-96 0z"
+          />
+        </svg>
+      </a>
+    </nav>
     <main>
-        <header class="header">
-            <h2>06-effects</h2>
-            <p>Add animations and effects to elements.</p>            
-        </header>
-        <section class="section">
-
-
-        </section>
-       
+      <header class="header">
+        <h2>06-effects</h2>
+        <p>Add animations and effects to elements.</p>
+      </header>
+      <section class="section">
+        <select name="" id="" class="fx">
+          <option value="">Select jQuery Effect</option>
+          <option value="1">Hide</option>
+          <option value="2" disabled>Show</option>
+          <option value="3">Toggle</option>
+          <option value="4" disabled>Slide Down</option>
+          <option value="5">Slide Up</option>
+          <option value="6">Slide Toggle</option>
+          <option value="7" disabled>Fade In</option>
+          <option value="8">Fade Out</option>
+          <option value="9" disabled>Fade To</option>
+          <option value="10">Fade Toggle</option>
+          <option value="11">Animate</option>
+          <option value="12">Stop</option>
+        </select>
+        <img
+          src="/09-jQuery/images/fondo-removebg-preview.png"
+          alt=""
+          class="character"
+        />
+      </section>
     </main>
     <script src="/09-jQuery/Todo list/js/jquery-3.7.1.min.js"></script>
     <script>
-        $(document).ready(function () {
-            // Your code here
-            $('.ready').text('✔ DOM Loaded  ⚠');
+      $(document).ready(function () {
+        $(".fx").change(function () {
+          //alert($(this).val())
+
+          switch ($(this).val()) {
+            case "1":
+              $(".character").hide();
+              toggleDisableds();
+              break;
+            case "2":
+              $(".character").show();
+              toggleDisableds();
+              break;
+            case "3":
+              $(".character").toggle(2500);
+              toggleDisableds();
+              break;
+            case "4":
+              $(".character").slideDown();
+              toggleDisableds();
+              break;
+            case "5":
+              $(".character").slideUp(2500);
+              toggleDisableds();
+              break;
+            case "6":
+              $(".character").slideToggle(2500);
+              toggleDisableds();
+              break;
+            case "7":
+              $(".character").fadeIn(2500);
+              toggleDisableds();
+              break;
+            case "8":
+              $(".character").fadeOut(2500);
+              toggleDisableds();
+              break;
+            case "9":
+              $(".character").fadeTo(2500, 0.5);
+              toggleDisableds();
+              break;
+            case "10":
+              $(".character").fadeToggle(2500);
+              toggleDisableds();
+              break;
+            case "11":
+              $(".character").animate({width: '120px'}, 2500);
+              $(".character").animate({width: '368px'}, 2500, toggleDisableds);
+              break;
+            case "12":
+              $(".character").stop();
+              toggleDisableds();
+              break;
+          }
         });
-        </script>
-</body>
+        //
+        function toggleDisableds() {
+          $("option").each(function () {
+            if (
+              $(this).text() != "toggle" &&
+              $(this).text() != "slide toggle" &&
+              $(this).text() != "fade toggle"
+            ) {
+              $(this).prop("disabled", !$(this).prop("disabled"));
+            }
+          });
+        }
+      });
+
+      // Generador de partículas para el fondo
+      document.addEventListener("DOMContentLoaded", function () {
+        const section = document.querySelector("section.section");
+
+        for (let i = 0; i < 30; i++) {
+          const particle = document.createElement("div");
+          particle.classList.add("particle");
+
+          // Tamaño aleatorio entre 2px y 6px
+          const size = Math.random() * 4 + 2;
+          particle.style.width = `${size}px`;
+          particle.style.height = `${size}px`;
+
+          // Posición aleatoria
+          particle.style.left = `${Math.random() * 100}%`;
+          particle.style.top = `${Math.random() * 100}%`;
+
+          // Animación
+          particle.style.animation = `float ${
+            Math.random() * 6 + 3
+          }s infinite ease-in-out`;
+          particle.style.animationDelay = `${Math.random() * 2}s`;
+
+          section.appendChild(particle);
+        }
+      });
+    </script>
+  </body>
 </html>
