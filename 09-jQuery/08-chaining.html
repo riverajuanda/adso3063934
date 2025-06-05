@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>08-chaining</title>
+    <link
+      rel="shortcut icon"
+      href="../images/logo-jquery.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../css/master.css" />
+    <style>
+      button.btn {
+        padding: 0.5rem 1rem;
+        border-radius: 0.4rem;
+        border: 1px solid #ccc;
+        background-color: #7e7474;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        width: 100px;
+        margin: 1rem auto 1rem auto;
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        color: whitesmoke;
+      }
+      button.btn:hover {
+        background-color: #e0e0e0;
+        color: black;
+      }
+
+      figure {
+        border-radius: 0.9rem;
+        overflow: hidden;
+        padding: 0;
+        margin: 1rem auto;
+        height: 300px;
+        width: 300px;
+        filter: grayscale(1);
+        border: 2px solid #ffffff;
+
+        img {
+          transition: all 0.5s ease;
+          transform: scale(1.6);
+        }
+      }
+
+      article.area {
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        position: relative;
+        background: url("images/fondo.jpg") no-repeat center;
+        background-size: cover;
+        width: 350px;
+        height: 300px;
+        img.character {
+          position: absolute;
+          top: 15px;
+          left: 10px;
+          width: 50px;
+          height: 70px;          
+          transform: rotateY(-180deg)
+        }
+      }
+
+   
+    </style>
+  </head>
+  <body class="jquery">
+    <nav class="nav">
+      <a href="/09-jQuery/index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+          <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <path
+            d="M320 33.8L320 160 48.5 160C100.2 82.8 188.1 32 288 32c10.8 0 21.5 .6 32 1.8zM352 160l0-120.9C424.9 55.7 487.2 99.8 527.5 160L352 160zM29.9 192L96 192l0 128L0 320c0-46 10.8-89.4 29.9-128zM192 320l-64 0 0-128 320 0 0 128-64 0 0 32 192 0 0 80c0 26.5-21.5 48-48 48l-176 0 0-128c0-35.3-28.7-64-64-64s-64 28.7-64 64l0 128L48 480c-26.5 0-48-21.5-48-48l0-80 192 0 0-32zm288 0l0-128 66.1 0c19.2 38.6 29.9 82 29.9 128l-96 0z"
+          />
+        </svg>
+      </a>
+    </nav>
+    <main>
+      <header class="header">
+        <h2>08-Chaining</h2>
+        <p>Chain multiple jQuery methods.</p>
+      </header>
+      <section class="section">
+        <button class="btn">Animate</button>
+        <article class="area">
+          <img
+            class="character"
+            src="images/mariopng.png"
+            alt="Mario"
+          />
+        </article>
+      </section>
+    </main>
+    <script src="/09-jQuery/Todo list/js/jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Set initial button state
+        $('.btn').click(function () {
+        $('.character')
+          .animate({ left: '300px'}, 500) // Move right 
+          .css({ transform: 'rotateY(0deg)' }) // Flip horizontally
+          .animate({ top: '200px' }, 500) // Move down
+          .animate({ left: '10px'}, 500) // Move left
+          .css({ transform: 'rotateY(-180deg)' }) // Flip horizontally
+          .animate({ top: '10px' }, 500); // Move up
+        });
+      });
+    </script>
+  </body>
+</html>
