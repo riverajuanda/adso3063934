@@ -1,37 +1,121 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10-add-remove</title>
-    <link rel="shortcut icon" href="../images/logo-jquery.png" type="image/x-icon">
+    <title>10- Add-remove</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/master.css">
+    <style>
+        section {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+
+            div {
+                background-color: #0006;
+                border-radius: 0.4rem;
+                min-height: 190px;
+                width: 120px;
+
+                h4 {
+                    background-color: #fff9;
+                    text-align: center;
+                }
+
+                label {
+                    border-bottom: 2px dotted #fff9;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.4rem;
+                    zoom: 1.6;
+                    justify-content: center;
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+            div.actions {
+                display: flex;
+                flex-direction: column;
+                gap: 0.4rem;
+                button {
+                    border: none;
+                    background-color: #75ec9199;
+                    border-radius: 0.4rem;
+                    cursor: pointer;
+                    display: flex;
+                    margin-inline: auto;
+                    justify-content: center;
+                    padding: 0.4rem;
+                    width: 80%;
+                    transition: transform 0.2s ease-in;
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                    &.empty {
+                        background-color: #ec7d7599;
+                    }
+                }
+            }
+        }
+    </style>
 </head>
+
 <body class="jquery">
     <nav class="nav">
-        <a href="/09-jQuery/index.html">            
-           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M320 33.8L320 160 48.5 160C100.2 82.8 188.1 32 288 32c10.8 0 21.5 .6 32 1.8zM352 160l0-120.9C424.9 55.7 487.2 99.8 527.5 160L352 160zM29.9 192L96 192l0 128L0 320c0-46 10.8-89.4 29.9-128zM192 320l-64 0 0-128 320 0 0 128-64 0 0 32 192 0 0 80c0 26.5-21.5 48-48 48l-176 0 0-128c0-35.3-28.7-64-64-64s-64 28.7-64 64l0 128L48 480c-26.5 0-48-21.5-48-48l0-80 192 0 0-32zm288 0l0-128 66.1 0c19.2 38.6 29.9 82 29.9 128l-96 0z"/></svg>
+        <a href="/09-jQuery/index.html">
+            <svg class="jQuery" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                    d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+            </svg>
         </a>
-           </nav>
+    </nav>
     <main>
         <header class="header">
-            <h2>10 - Add & Remove</h2>
-            <p>Add or remove elements from the DOM.</p>            
+            <h2>10- Add-remove</h2>
+            <p>Add or remove elements from the DOM.</p>
         </header>
         <section class="section">
-
-
+            <div class="Fruits">
+                <h4>Fruits</h4>
+                <label>
+                    <input type="checkbox" name="fruit" value="🍎">
+                    🍎
+                </label>
+                <label>
+                    <input type="checkbox" name="fruit" value="🍊">
+                    🍊
+                </label>
+                 <label>
+                    <input type="checkbox" name="fruit" value="🍐">
+                    🍐
+                </label>
+                 <label>
+                    <input type="checkbox" name="fruit" value="🍒">
+                    🍒
+                </label>
+            </div>
+            <div class="actions">
+                <h4>Actions</h4>
+                <button class="append">Append</button>
+                <button class="prepend">Prepend</button>
+                <button class="after">After</button>
+                <button class="before">Before</button>
+                <button class="empty">Empty</button>
+            </div>
+            <div class="list">
+                <h4>List</h4>
+                <ol class="output"></ol>
+            </div>
         </section>
-       
     </main>
-    <script src="/09-jQuery/Todo list/js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
     <script>
-        $(document).ready(function () {
-            // Your code here
-            
-        });
-        
-        </script>
-</body>
-</html>
 
+    </script>
+</body>
+
+</html>
