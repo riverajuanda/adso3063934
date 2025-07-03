@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10- Add-remove</title>
+    <title>10- add-remove</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/master.css">
     <style>
@@ -22,6 +22,7 @@
                 h4 {
                     background-color: #fff9;
                     text-align: center;
+                    border-radius: .4rem .4rem 0 0;
                 }
 
                 label {
@@ -31,18 +32,17 @@
                     gap: 0.4rem;
                     zoom: 1.6;
                     justify-content: center;
+                    
 
                     &:last-child {
                         border-bottom: none;
                     }
                 }
             }
-
             div.actions {
                 display: flex;
                 flex-direction: column;
                 gap: 0.4rem;
-
                 button {
                     border: none;
                     background-color: #75ec9199;
@@ -54,13 +54,32 @@
                     padding: 0.4rem;
                     width: 80%;
                     transition: transform 0.2s ease-in;
-
                     &:hover {
                         transform: scale(1.05);
                     }
-
                     &.empty {
                         background-color: #ec7d7599;
+                    }
+                }
+            }
+            div.list{
+                ol{
+                    height: 170px;
+                    overflow: auto;
+                    li {
+                        border-bottom: 1px dotted #fff6;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        zoom: 1.6;
+                        span {
+                            cursor: pointer;
+                            color: #a00;
+                            transition: transform 0.2s ease-in;
+                            &:hover {
+                                transform: scale(1.2);
+                            }
+                        }
                     }
                 }
             }
@@ -70,8 +89,8 @@
 
 <body class="jquery">
     <nav class="nav">
-        <a href="/09-jQuery/index.html">
-            <svg class="jQuery" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <a href="index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                 <path
                     d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
             </svg>
@@ -79,12 +98,13 @@
     </nav>
     <main>
         <header class="header">
-            <h2>10- Add-remove</h2>
-            <p>Add or remove elements from the DOM.</p>
+            <h1>10- add-remove</h1>
+            <p>Set or get values and attributes of elements.</p>
         </header>
-        <section class="section">
+               <section class="section">
             <div class="Fruits">
                 <h4>Fruits</h4>
+                
                 <label>
                     <input type="radio" name="fruit" value="🍎">
                     🍎
@@ -93,11 +113,11 @@
                     <input type="radio" name="fruit" value="🍊">
                     🍊
                 </label>
-                <label>
+                 <label>
                     <input type="radio" name="fruit" value="🍐">
                     🍐
                 </label>
-                <label>
+                 <label>
                     <input type="radio" name="fruit" value="🍒">
                     🍒
                 </label>
@@ -112,44 +132,45 @@
             </div>
             <div class="list">
                 <h4>List</h4>
-                <ol class="output"></ol>
+                <ol class="output">
+                    
+
+                </ol>
             </div>
         </section>
     </main>
     <script src="js/jquery-3.7.1.min.js"></script>
     <script>
         $(document).ready(function () {
-            // Append (add last child)
-            $('.actions').on('click', function () {
-                if (checkSelection()) {
-                    const selectedFruit = $('input[name="fruit"]:checked').val();
-                    $('.output').append(`<li>${selectedFruit}</li>`);
+
+            // Preppend (Add last child)
+            $('.actions').on('click', '.append', function () {
+                if(checkSelection()) {
+                    $fruits = $('input[name="fruit"]:checked');
+                    $('.output').append(`<li>${$fruits.val()}<span>&times;</span></li>`)
+                    $($fruits).prop('checked', false);
                 } else {
-                    alert('Please: Check a Fruit!!.');
+                    alert('Please: Check a Fruit!');
                 }
-            })
+            });
+
+            // Remove (Remove this element)
+            $('.list').on('click', 'li span', function () {
+                $(this).parent().remove();
+            });
         })
-                // Your append logic here
-
-
-        
-            // Functions
-            function checkSelection() {
-                $isChecked = false;
-                $fruits = $('input[name="fruit"]');
-                $.each($fruits, function (index, element) {
-                    if ($(element).prop('checked')) {
-                        $isChecked = true;
-                       
-                    }
-                });
-                if($isCheked)return true;
-                else return false; 
-            }
-        
-            
-
-
+        // Functions 
+        function checkSelection() {
+            $isCheked = false;
+            $fruits = $('input[name="fruit"]')
+            $.each($fruits, function (index, element) {
+                if($(element).prop('checked')) {
+                    $isCheked = true;
+                }
+            }); 
+            if($isCheked) return true
+            else return false;
+        }
     </script>
 </body>
 
