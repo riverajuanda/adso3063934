@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -37,10 +37,12 @@
                     }
                 }
             }
+
             div.actions {
                 display: flex;
                 flex-direction: column;
                 gap: 0.4rem;
+
                 button {
                     border: none;
                     background-color: #75ec9199;
@@ -52,9 +54,11 @@
                     padding: 0.4rem;
                     width: 80%;
                     transition: transform 0.2s ease-in;
+
                     &:hover {
                         transform: scale(1.05);
                     }
+
                     &.empty {
                         background-color: #ec7d7599;
                     }
@@ -89,11 +93,11 @@
                     <input type="radio" name="fruit" value="🍊">
                     🍊
                 </label>
-                 <label>
+                <label>
                     <input type="radio" name="fruit" value="🍐">
                     🍐
                 </label>
-                 <label>
+                <label>
                     <input type="radio" name="fruit" value="🍒">
                     🍒
                 </label>
@@ -114,6 +118,37 @@
     </main>
     <script src="js/jquery-3.7.1.min.js"></script>
     <script>
+        $(document).ready(function () {
+            // Append (add last child)
+            $('.actions').on('click', function () {
+                if (checkSelection()) {
+                    const selectedFruit = $('input[name="fruit"]:checked').val();
+                    $('.output').append(`<li>${selectedFruit}</li>`);
+                } else {
+                    alert('Please: Check a Fruit!!.');
+                }
+            })
+        })
+                // Your append logic here
+
+
+        
+            // Functions
+            function checkSelection() {
+                $isChecked = false;
+                $fruits = $('input[name="fruit"]');
+                $.each($fruits, function (index, element) {
+                    if ($(element).prop('checked')) {
+                        $isChecked = true;
+                       
+                    }
+                });
+                if($isCheked)return true;
+                else return false; 
+            }
+        
+            
+
 
     </script>
 </body>
